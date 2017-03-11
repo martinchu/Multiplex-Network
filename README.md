@@ -42,4 +42,19 @@ Single-layer networks cannot address the interactions among entities.
 #Program Description
 
 ##input
-the input will include the number of banks reported, the minimum capital of each bank (MC), the (C)
+the input will include the number of banks reported,  the weighted total value of the bank capital (C) and  the minimum capital of each bank (MC)
+
+For Example,
+<pre><code>
+5
+10
+3
+21
+10
+100
+90
+10
+2
+120
+50
+</code></pre>
