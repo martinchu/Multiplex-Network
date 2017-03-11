@@ -38,3 +38,8 @@ Single-layer networks cannot address the interactions among entities.
 
 <!-- The multilayer network research is not well-developed. -->
 <!-- In this paper/research, a node represents a financial entity and an edge represents a relation -->
+
+#Program Description
+
+##input
+the input will include the number of banks reported, the minimum capital of each bank (MC), the (C)
