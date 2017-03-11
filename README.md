@@ -1,4 +1,10 @@
-# Project Part 1 Research
+# Multiplex-Network
+
+Contributor: Iduoriyekemwen Hayford, Jessica Huang, Martin Chu
+
+
+
+## Project Part 1 Research
 
 https://liveuclac-my.sharepoint.com/personal/zceichu_live_ucl_ac_uk/_layouts/15/guestaccess.aspx?docid=02eb9725e62ec42f2a04b0d3ef7e748b0&authkey=AWrUuf2yApLaRqnG6_tSiD0
 
@@ -8,10 +14,6 @@ https://liveuclac-my.sharepoint.com/personal/zceichu_live_ucl_ac_uk/_layouts/15/
 
 
 
-
-# Multiplex-Network
-
-Contributor: Iduoriyekemwen Hayford, Jessica Huang, Martin Chu
 
 ## Context:
 
