@@ -84,26 +84,21 @@ def generateExposures():
         fifteen_pc_exp = 0.15*banks[i]["sum_exposures"]
         banks[i]["min_cap"] = getRand(ten_pc_exp, fifteen_pc_exp)
         randfit = False
-        # print sixty_fix_pc_ac
         while (randfit == False):
             randCap = getRand(0.3,0.45)*(10**9)
-            # print "mincap "+ str(banks[i]["min_cap"])
-            # print "rancap " + str(randCap)
-            # print "========="
             a_cap = randCap-banks[i]["min_cap"]
             fifteen_pc_ac = 0.15*randCap
-            # print fifteen_pc_ac
             sixty_five_pc_ac = 0.65*randCap
             if (( fifteen_pc_ac < a_cap) and (a_cap < sixty_five_pc_ac)):
                 banks[i]["capital"] = randCap;
-                banks[i]["available_capital"] = a_cap;
                 randfit = True 
-                # print banks[i]["capital"]
             else:
                 print "else triggered"
                 randCap = getRand(0.3,0.45)*(10**9)
                 fifteen_pc_ac = 0.65*randCap
                 sixty_fix_pc_ac = 0.65*randCap
-    print banks;
+
+def runcontagionsteps(n):
+    if (n == 0):
 if __name__ == "__main__":
     main()
