@@ -76,6 +76,9 @@ def getRand(range0, range1):
 def generateExposures():
     bankList = []
     for i in range(0, 22):
+    # use 0 as starting point to avoid index out of range for the bankList array
+    # for i in range(1, 23):
+
         B = Bank()
         bankList.append(B)
         # banks[i] = dict();
