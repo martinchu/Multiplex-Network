@@ -1,6 +1,7 @@
 #! /usr/bin/python
 import tensorflow as tf
 import numpy as np
+import random as rand
 # numBank = input("Enter the number of bank: ")
 
 
@@ -24,8 +25,8 @@ def main():
     # Step 1: Calculate Sead Matrix
 
     # Step 2: Simulate Step 0
-    failed(banks, eadValues, 0);
-    
+    # failed(banks, eadValues, 0);
+    generateExposures()
     # Step 3: Simulate Step 1
     # failed(banks, eadValues, 1);
     # Step 4: Simulate Step q > 1
@@ -50,6 +51,41 @@ def failed(banks, eadMatrix, step):
 
     print(failedSet)
 
+def getRand(range0, range1):
+    return rand.uniform(range0, range1);
 
+banks = dict()
+def generateExposures():
+    for i in range(1, 23):
+        banks[i] = dict();
+        banks[i]["derivatives_exposure"] = getRand(0, 0.3)*(10**9);
+        banks[i]["fixed_income_exposure"] = getRand(0.35,0.6)*(10**9);
+        banks[i]["securities_financing_exposure"] = getRand(0.65, 0.9)*(10**9);
+        banks[i]["sum_exposures"] = banks[i]["derivatives_exposure"]+banks[i]["fixed_income_exposure"]+banks[i]["securities_financing_exposure"]
+        ten_pc_exp = 0.1*banks[i]["sum_exposures"]
+        fifteen_pc_exp = 0.15*banks[i]["sum_exposures"]
+        banks[i]["min_cap"] = getRand(ten_pc_exp, fifteen_pc_exp)
+        randfit = False
+        # print sixty_fix_pc_ac
+        while (randfit == False):
+            randCap = getRand(0.3,0.45)*(10**9)
+            # print "mincap "+ str(banks[i]["min_cap"])
+            # print "rancap " + str(randCap)
+            # print "========="
+            a_cap = randCap-banks[i]["min_cap"]
+            fifteen_pc_ac = 0.15*randCap
+            # print fifteen_pc_ac
+            sixty_five_pc_ac = 0.65*randCap
+            if (( fifteen_pc_ac < a_cap) and (a_cap < sixty_five_pc_ac)):
+                banks[i]["capital"] = randCap;
+                banks[i]["available_capital"] = a_cap;
+                randfit = True 
+                # print banks[i]["capital"]
+            else:
+                print "else triggered"
+                randCap = getRand(0.3,0.45)*(10**9)
+                fifteen_pc_ac = 0.65*randCap
+                sixty_fix_pc_ac = 0.65*randCap
+    print banks;
 if __name__ == "__main__":
     main()
